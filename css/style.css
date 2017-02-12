@@ -3,7 +3,7 @@ body {
 	background:#F5F5F5;
 }
 .paulette {
- 	background:#1976D2; 
+ 	background:#303F9F; 
  	
  }
  .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
@@ -44,12 +44,12 @@ background-color: #1976D2;
 
     }
     .badge{
-    	background: #F50057;
+    	background:#26A69A;
+    	color: #FFFFFF;
 }
-
-     
+    
 .btn{
-  	background: #F50057;
+  	
   	color: #FFFFFF;
   }
 
