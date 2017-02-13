@@ -5,18 +5,16 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <title>Material Design Bootstrap</title>
+  <title>Surreal</title>
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
   <!-- Bootstrap core CSS -->
   <link href="css/bootstrap.min.css" rel="stylesheet">
-  <!-- Material Design Bootstrap -->
-  <link href="css/mdb.min.css" rel="stylesheet">
   <!-- Custom css -->
   <link href="css/style.css" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="css/palette.css">
 
-  <script type="text/javascript" src="js/jquery-1.8.0.js"></script>
+  <script type="text/javascript" src="js/jquery-3.1.1.js"></script>
   <script type="text/javascript" src="js/bootstrap.min.js"></script>
 
 </head>
@@ -34,41 +32,21 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">Surreal</a>
+          <a class="navbar-brand" href="/">Surreal</a>
         </div>
+
+        <form class="navbar-form navbar-left" role="search">
+          <div class="form-group">
+            <input type="text" class="form-control" placeholder="Search">
+          </div>
+          <button type="submit" class="btn btn-default">Submit</button>
+        </form>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-          <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Rent<span class="sr-only">(current)</span></a></li>
-            <li><a href="#">New homes</a></li>
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Property Pages <span class="caret"></span></a>
-              <ul class="dropdown-menu">
-                <li><a href="#">Property Listings</a></li>
-                <li><a href="#">Properties Map</a></li>
-                <li><a href="#">Compare Properties</a></li>
-              </ul>
-            </li>
-          </ul>
-          <form class="navbar-form navbar-left">
-            <div class="form-group">
-              <input type="text" class="form-control" placeholder="Search">
-            </div>
-            <button type="submit" class="btn btn-default">Search</button>
-          </form>
           <ul class="nav navbar-nav navbar-right">
             <li><a href="#">Login</a></li>
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Sign Up <span class="caret"></span></a>
-              <ul class="dropdown-menu">
-                <li><a href="#">Action</a></li>
-                <li><a href="#">Another action</a></li>
-                <li><a href="#">Something else here</a></li>
-                <li role="separator" class="divider"></li>
-                <li><a href="#">Separated link</a></li>
-              </ul>
-            </li>
+            <li><a href="#">Sign Up</a></li>
           </ul>
         </div>
         <!-- /.navbar-collapse -->
@@ -167,15 +145,20 @@
 
           <!-- Nav tabs -->
           <ul class="nav nav-tabs nav-justified" role="tablist">
-            <li role="presentation" class="active"><a href="#three_d_models" aria-controls="three_d_models" role="tab" data-toggle="tab">3D Models</a></li>
+            <li role="presentation" class="active"><a href="#maps" aria-controls="maps" role="tab" data-toggle="tab">Map</a></li>
+            <li role="presentation"><a href="#three_d_models" aria-controls="three_d_models" role="tab" data-toggle="tab">3D Models</a></li>
             <li role="presentation"><a href="#three_sixty_videos" aria-controls="three_sixty_videos" role="tab" data-toggle="tab">360 Videos</a></li>
             <li role="presentation"><a href="#three_sixty_photos" aria-controls="three_sixty_photos" role="tab" data-toggle="tab">360 Photos</a></li>
-            <li role="presentation"><a href="#maps" aria-controls="maps" role="tab" data-toggle="tab">Map</a></li>
           </ul>
 
           <!-- Tab panes -->
           <div class="tab-content">
-            <div role="tabpanel" class="tab-pane active" id="three_d_models">
+            <div role="tabpanel" class="tab-pane active" id="maps">
+              <div class="thumbnail">
+                <div id="detail-map"></div>
+              </div>
+            </div>
+            <div role="tabpanel" class="tab-pane" id="three_d_models">
               <div class="panel panel-default">
                 <div class="panel-body">
 
@@ -213,12 +196,6 @@
               </div>
             </div>
             <div role="tabpanel" class="tab-pane" id="three_sixty_photos">
-              <div class="thumbnail">
-                <iframe src="https://www.360cities.net/embed_iframe/black-angus-tauno-kangro-helsinki" width="100%" height="480px" frameborder="0"
-                  bgcolor="#000000" target="_blank" allowfullscreen webkitallowfullscreen mozallowfullscreen></iframe><br/><a title="Panorama photos of Black Angus sculpture by Tauno Kangro on 360cities.net" href="https://www.360cities.net/image/black-angus-tauno-kangro-helsinki">Black Angus sculpture by Tauno Kangro</a>
-              </div>
-            </div>
-            <div role="tabpanel" class="tab-pane" id="maps">
               <div class="thumbnail">
                 <iframe src="https://www.360cities.net/embed_iframe/black-angus-tauno-kangro-helsinki" width="100%" height="480px" frameborder="0"
                   bgcolor="#000000" target="_blank" allowfullscreen webkitallowfullscreen mozallowfullscreen></iframe><br/><a title="Panorama photos of Black Angus sculpture by Tauno Kangro on 360cities.net" href="https://www.360cities.net/image/black-angus-tauno-kangro-helsinki">Black Angus sculpture by Tauno Kangro</a>
@@ -353,9 +330,30 @@
       </div>
 
     </div>
+
+  <script>
+      $(document).ready(function (){
+          var detailMap = L.map('detail-map').setView([5.6422718, -0.155063], 12);
+
+          L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+              attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+          }).addTo(detailMap);
+
+          L.marker([5.6422718, -0.155063]).addTo(detailMap)
+              .bindPopup(`
+                <a href="/listings/1">
+                  <img src="images/kitchen.jpg" alt="Kitchen" />
+                </a>
+                <div class="caption">
+                  GHC 300, Room 22 SandCity
+                </div>
+              `)
+              .openPopup();
+      });
+  </script>
   </div>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-  <script src="js/bootstrap.min.js"></script>
+
+  <script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
 </body>
 
 </html>
