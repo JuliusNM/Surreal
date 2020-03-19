@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <title>Material Design Bootstrap</title>
+  <title>Surreal</title>
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
   <!-- Bootstrap core CSS -->
@@ -13,31 +13,28 @@
   <!-- Custom css -->
   <link href="css/style.css" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="css/palette.css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+
+  <script src="js/jquery-3.1.1.js"></script>
+  <script src="js/bootstrap.min.js"></script>
 
 </head>
 
 <body>
-  <nav class="navbar navbar-default">
+    <nav class="navbar navbar-default">
     <div class="paulette">
       <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
-            aria-expanded="false">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
             <span class="sr-only">Toggle navigation</span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="/">Surreal</a>
+          <h4><b><a class="navbar-brand" href="index.html">Surreal</a></b></h4>
         </div>
 
-        <form class="navbar-form navbar-left" role="search">
-          <div class="form-group">
-            <input type="text" class="form-control" placeholder="Search">
-          </div>
-          <button type="submit" class="btn btn-default">Submit</button>
-        </form>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -45,207 +42,217 @@
             <li><a href="#">Login</a></li>
             <li><a href="#">Sign Up</a></li>
           </ul>
-        </div>
-        <!-- /.navbar-collapse -->
-      </div>
-      <!-- /.container-fluid -->
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
     </div>
-  </nav>
+  </nav><br><br><br>
 
-  <div class="container-fluid">
-    <!--Row with three equal columns-->
-    <div class="row">
-      <div class="col-md-4">
-        <!--Column left-->
-        <!--Column left Search group-->
-        <div class="panel panel-default">
-          <div class="panel-heading">
-            <h3 class="panel-title">Location and criteria</h3>
-          </div>
-          <div class="panel-body">
+ <div class="container">
+  <div class="col-sm-12" id="clone">
+     <p class="tagline"><font size ="8"><b>Great homes and neighbourhoods start with Surreal. <br></b><small style="color: #616161;">Make informed decisions about which place to rent</small></p> </font>
+ </div>
+ </div><br><br>
 
-            <form class="form-inline">
-              <label class="">Location</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-              <input type="" name=""><br>
-              <label class="">Property type</label>&nbsp;
-              <select class="">
-            <option selected>Any</option>
+
+  <div class="container">
+  
+
+  <div class="row">
+    <div class="col-sm-12 panel">     
+      <form action="/search" autocomplete="off" class="form-inline panel-body" method="get" name="search" accept-charset="utf-8">
+        <div class="form-group">
+          <label class="sr-only" for="location">Location</label>
+          <input type="text" class="form-control" name="location" id="location" placeholder="Location">
+        </div>
+        <div class="form-group">
+          <label class="sr-only" for="property-type">Property Type</label>
+          <select class="form-control" name="property_type" id="property-type">
+            <option value="">Property Type</option>
+            <option value="0">Any</option>
             <option value="1">One</option>
             <option value="2">Two</option>
             <option value="3">Three</option>
           </select>
-              <br>
-              <label class="">Bedrooms</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-              <select class="">
-            <option selected>Any</option>
+        </div>
+        <div class="form-group">
+          <label class="sr-only" for="bedrooms">Bedrooms</label>
+          <select class="form-control" name="bedrooms" id="bedrooms">
+            <option value="">Bedrooms</option>
+            <option value="0">Any</option>
             <option value="1">One</option>
             <option value="2">Two</option>
             <option value="3">Three</option>
           </select>
-              <br>
-              <label class="">Cost</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-              <select class="">
-            <option selected>Min</option>
-            <option value="1">One</option>
-            <option value="2">Two</option>
-            <option value="3">Three</option>
-          </select>
-              <select class="">
-            <option selected>Max</option>
-            <option value="1">One</option>
-            <option value="2">Two</option>
-            <option value="3">Three</option>
-          </select>
-
-              <br><button type="submit" class="btn btn-primary">Search</button>
-            </form>
-          </div>
-        </div><br>
-        <!--Map View-->
-        <div id="search-map"></div>
-      </div>
-
-      <div class="col-md-8">
-        <!--Column right-->
-
-        <div class="thumbnails">
-
-          <div class="col-sm-4 col-md-4">
-            <li class="span2 thumbnail">
-
-              <a href="/listings/1">
-                <img src="images/kitchen.jpg" alt="Kitchen" />
-              </a>
-              <div class="caption">
-                <p>
-                  GHC 300, Asoyi Avenue, East Legon, Accra
-                </p>
-              </div>
-            </li>
-          </div>
-          <div class="col-sm-4 col-md-4">
-            <li class="span2 thumbnail">
-
-              <a href="/listings/2">
-                <img src="images/kitchen.jpg" alt="Kitchen" />
-              </a>
-              <div class="caption">
-                <p>
-                  GHC 300, Asoyi Avenue, East Legon, Accra
-                </p>
-              </div>
-            </li>
-          </div>
-          <div class="col-sm-4 col-md-4">
-            <li class="span2 thumbnail">
-
-              <a href="/listings/3">
-                <img src="images/kitchen.jpg" alt="Kitchen" />
-              </a>
-              <div class="caption">
-                <p>
-                  GHC 300, Asoyi Avenue, East Legon, Accra
-                </p>
-              </div>
-            </li>
-          </div>
-          <div class="col-sm-4 col-md-4">
-            <li class="span2 thumbnail">
-
-              <a href="/listings/4">
-                <img src="images/kitchen.jpg" alt="Kitchen" />
-              </a>
-              <div class="caption">
-                <p>
-                  GHC 300, Asoyi Avenue, East Legon, Accra
-                </p>
-              </div>
-            </li>
-          </div>
-          <div class="col-sm-4 col-md-4">
-            <li class="span2 thumbnail">
-
-              <a href="/listings/5">
-                <img src="images/kitchen.jpg" alt="Kitchen" />
-              </a>
-              <div class="caption">
-                <p>
-                  GHC 300, Asoyi Avenue, East Legon, Accra
-                </p>
-              </div>
-            </li>
-          </div>
-          <div class="col-sm-4 col-md-4">
-            <li class="span2 thumbnail">
-
-              <a href="/listings/6">
-                <img src="images/kitchen.jpg" alt="Kitchen" />
-              </a>
-              <div class="caption">
-                <p>
-                  GHC 300, Asoyi Avenue, East Legon, Accra
-                </p>
-              </div>
-            </li>
-          </div>
-          <div class="col-sm-4 col-md-4">
-            <li class="span2 thumbnail">
-
-              <a href="/listings/7">
-                <img src="images/kitchen.jpg" alt="Kitchen" />
-              </a>
-              <div class="caption">
-                <p>
-                  GHC 300, Asoyi Avenue, East Legon, Accra
-                </p>
-              </div>
-            </li>
-          </div>
-          <div class="col-sm-4 col-md-4">
-            <li class="span2 thumbnail">
-
-              <a href="/listings/8">
-                <img src="images/kitchen.jpg" alt="Kitchen" />
-              </a>
-              <div class="caption">
-                <p>
-                  GHC 300, Asoyi Avenue, East Legon, Accra
-                </p>
-              </div>
-            </li>
-          </div>
-          <div class="col-sm-4 col-md-4">
-            <li class="span2 thumbnail">
-
-              <a href="/listings/9">
-                <img src="images/kitchen.jpg" alt="Kitchen" />
-              </a>
-              <div class="caption">
-                <p>
-                  GHC 300, Asoyi Avenue, East Legon, Accra
-                </p>
-              </div>
-            </li>
-          </div>
-
         </div>
 
-      </div>
+        <div class="form-group">
+          <label class="sr-only" for="cost-min">Cost Min</label>
+          <input type="number" class="form-control" name="cost_min" id="cost-min" placeholder="Cost Min">
+          <label class="sr-only" for="cost-min">Cost Max</label>
+          <input type="number" class="form-control" name="cost_max" id="cost-max" placeholder="Cost Max">
+        </div>
+
+        <button class="btn" type="submit" class="btn btn-primary btn-lg sharp"><b>Search</b></button><br><br><br>
+      </form>
     </div>
-
-    <script>
-$(document).ready(function (){
-    var searchMap = L.map('search-map').setView([5.6422718, -0.155063], 13);
-
-    L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
-        attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-    }).addTo(searchMap);
-    
-});
-</script>
   </div>
 
+  
+
+  <div class="row">
+    <div class="col-md-12">
+      <h4>Safe neighbourhoods</h4><br>
+    </div>
+  </div>
+
+  <div class="row">
+      <div class="col-sm-4 col-md-4">
+        <div class="thumbnail">
+
+          <a href="/listings/1">
+            <img src="images/house7.jpg" alt="Kitchen" />
+</a>
+                <div class="caption">
+                  <p>
+                    <b>GHC 300,000 - 3bd<span class="pull-right"><i class="glyphicon glyphicon-star"></i><i class="glyphicon glyphicon-star"></i><i class="glyphicon glyphicon-star"></i><i class="glyphicon glyphicon-star"></i></i></span><br></b>3rd Asoyi Ln, Accra, Ghana
+                  </p>
+                </div>
+        </div>
+      </div>
+       <div class="col-sm-4 col-md-4">
+        <div class="thumbnail">
+
+          <a href="/listings/1">
+            <img src="images/house1.jpg" alt="Kitchen" />
+</a>
+                <div class="caption">
+                   <p>
+                    <b>GHC 300,000 - 3bd<span class="pull-right"><i class="glyphicon glyphicon-star"></i><i class="glyphicon glyphicon-star"></i><i class="glyphicon glyphicon-star"></i><i class="glyphicon glyphicon-star"></i></i></span><br></b>3rd Asoyi Ln, Accra, Ghana
+                  </p>
+                </div>
+        </div>
+      </div>
+      <div class="col-sm-4 col-md-4">
+        <div class="thumbnail">
+
+          <a href="/listings/4">
+            <img src="images/house2.jpg" alt="Kitchen" />
+</a>
+                <div class="caption">
+                  <p>
+                    <b>GHC 300,000 - 3bd<span class="pull-right"><i class="glyphicon glyphicon-star"></i><i class="glyphicon glyphicon-star"></i><i class="glyphicon glyphicon-star"></i><i class="glyphicon glyphicon-star"></i></i></span><br></b>3rd Asoyi Ln, Accra, Ghana
+                  </p>
+                </div>
+        </div>
+      </div>
+   
+      </div>
+        <div class="row">
+    <div class="col-md-12">
+      <h4>Featured Homes</h4><br>
+    </div>
+  </div>
+
+  <div class="row">
+      <div class="col-sm-4 col-md-4">
+        <div class="thumbnail">
+
+          <a href="/listings/1">
+            <img src="images/house2.jpg" alt="Kitchen" />
+</a>
+                <div class="caption">
+                   <p>
+                    <b>GHC 300,000 - 3bd<span class="pull-right"><i class="glyphicon glyphicon-star"></i><i class="glyphicon glyphicon-star"></i><i class="glyphicon glyphicon-star"></i><i class="glyphicon glyphicon-star"></i></i></span><br></b>3rd Asoyi Ln, Accra, Ghana
+                  </p>
+                </div>
+        </div>
+      </div>
+       <div class="col-sm-4 col-md-4">
+        <div class="thumbnail">
+
+          <a href="/listings/1">
+            <img src="images/house4.jpg" alt="Kitchen" />
+</a>
+                <div class="caption">
+                  <p>
+                    <b>GHC 300,000 - 3bd<span class="pull-right"><i class="glyphicon glyphicon-star"></i><i class="glyphicon glyphicon-star"></i><i class="glyphicon glyphicon-star"></i><i class="glyphicon glyphicon-star"></i></i></span><br></b>3rd Asoyi Ln, Accra, Ghana
+                  </p>
+                </div>
+        </div>
+      </div>
+      <div class="col-sm-4 col-md-4">
+        <div class="thumbnail">
+
+          <a href="/listings/4">
+            <img src="images/kitchen.jpg" alt="Kitchen" />
+</a>
+                <div class="caption">
+                  <p>
+                    <b>GHC 300,000 - 3bd<span class="pull-right"><i class="glyphicon glyphicon-star"></i><i class="glyphicon glyphicon-star"></i><i class="glyphicon glyphicon-star"></i><i class="glyphicon glyphicon-star"></i></i></span><br></b>3rd Asoyi Ln, Accra, Ghana
+                  </p>
+                </div>
+        </div>
+      </div>
+   
+      </div>
+
+        <div class="row">
+    <div class="col-md-12">
+      <h4>Best neighbourhoods</h4><br>
+    </div>
+  </div>
+
+  <div class="row">
+      <div class="col-sm-4 col-md-4">
+        <div class="thumbnail">
+
+          <a href="/listings/1">
+            <img src="images/house5.jpg" alt="Kitchen" />
+</a>
+                <div class="caption">
+                  <p>
+                    <b>GHC 300,000 - 3bd<span class="pull-right"><i class="glyphicon glyphicon-star"></i><i class="glyphicon glyphicon-star"></i><i class="glyphicon glyphicon-star"></i><i class="glyphicon glyphicon-star"></i></i></span><br></b>3rd Asoyi Ln, Accra, Ghana
+                  </p>
+                </div>
+        </div>
+      </div>
+       <div class="col-sm-4 col-md-4">
+        <div class="thumbnail">
+
+          <a href="/listings/1">
+            <img src="images/house6.jpg" alt="Kitchen" />
+</a>
+                <div class="caption">
+                   <p>
+                    <b>GHC 300,000 - 3bd<span class="pull-right"><i class="glyphicon glyphicon-star"></i><i class="glyphicon glyphicon-star"></i><i class="glyphicon glyphicon-star"></i><i class="glyphicon glyphicon-star"></i></i></span><br></b>3rd Asoyi Ln, Accra, Ghana
+                  </p>
+                </div>
+        </div>
+      </div>
+      <div class="col-sm-4 col-md-4">
+        <div class="thumbnail">
+
+          <a href="/listings/4">
+            <img src="images/house8.jpg" alt="Kitchen" />
+</a>
+                <div class="caption">
+                   <p>
+                    <b>GHC 300,000 - 3bd<span class="pull-right"><i class="glyphicon glyphicon-star"></i><i class="glyphicon glyphicon-star"></i><i class="glyphicon glyphicon-star"></i><i class="glyphicon glyphicon-star"></i></i></span><br></b>3rd Asoyi Ln, Accra, Ghana
+                  </p>
+                </div>
+        </div>
+      </div>
+
+   
+      </div>
+
+  </div>
+
+</div>
+
   <script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
+
+
 </body>
 
 </html>
